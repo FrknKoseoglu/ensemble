@@ -6,12 +6,21 @@
  
    /* Colors */
 
+  $const-color-black : #000;
+  $const-color-white: #fff;
+  $const-color-red : red;
 
-  $color-1:#223051;
-  $color-2:#c02025;
-  $color-3:#555555;
-  $color-4:#efefef;
-  $color-5:#acacac;
-  $color-6:#fafafa;
-  $color-7:#e4e3de;
+  $color-1:#1a1240;
+  $color-2:#662d91;
+  $color-3:#515151;
+  $color-4:#6c6476;
+  $color-5:#745195;
 
+ $gradient-1:linear-gradient(90deg, rgba(60,30,100,1) 0%, rgba(81,38,123,1) 50%, rgba(60,30,100,1) 100%);
+ $gradient-2:linear-gradient(90deg, rgba(32,16,55,1) 0%, rgba(42,20,67,1) 50%, rgba(32,16,55,1) 100%);
+.gradient-bg-1{
+   background: $gradient-1;
+}
+.gradient-bg-2{
+   background: $gradient-2;
+}
