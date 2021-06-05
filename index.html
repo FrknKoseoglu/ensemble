@@ -35,9 +35,9 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                               <div class="navbar-nav ml-auto">
-                                <a class="nav-item nav-link" href="#">WHITEPAPER</span></a>
-                                <a class="nav-item nav-link" href="#">ROADMAP</a>
-                                <a class="nav-item nav-link" href="#">CONTACT</a>
+                                <a class="nav-item nav-link" target="_blank" href="/content/docs/sample.pdf">WHITEPAPER</span></a>
+                                <a class="nav-item nav-link" href="#roadmap">ROADMAP</a>
+                                <a class="nav-item nav-link" href="#contact">CONTACT</a>
                               </div>
                             </div>
                   </nav>
@@ -88,21 +88,110 @@
       </div>
 
         </section>
-        <section class="bubble-area">
+        <section class="platform sec3">
           <div class="container">
-            <div class="row">
-              
+            <div class="platform__content">
+              <div class="bubble">
+                <div class="bubble__title">HeWo</div>
+                <div class="bubble__desc">Open-source software based and
+                    coder-awarded platform.</div>
+            </div>
+            <div class="bubble">
+              <div class="bubble__title">HeWo</div>
+              <div class="bubble__desc">Open-source software based and
+                  coder-awarded platform.</div>
+          </div>
+            </div>
+            <div class="platform__content">
+              <div class="bubble">
+                <div class="bubble__title">HeWo</div>
+                <div class="bubble__desc">Open-source software based and
+                    coder-awarded platform.</div>
+            </div>
+            <div class="bubble">
+              <div class="bubble__title">HeWo</div>
+              <div class="bubble__desc">Open-source software based and
+                  coder-awarded platform.</div>
+          </div>
+            </div>
+            <div class="logo logo--center">
+              <div class="circle">
+                <img src="/content/images/icon/ensemble.png" alt="">
+              </div>
             </div>
           </div>
         </section>
+        <div class="roadmap sec4" id="roadmap">
+          <div class="roadmap__title">ROADMAP</div>
+          
+              <div class="roadmap__content">
+                <img src="/content/images/section/roadmap.jpg" alt="">
+              </div>
+        </div>
+        <div class="binance sec5">
+          <div class="binance__title">POWERED BY</div>
+          <div class="binance__img"><img src="/content/images/logo/binance.png" alt=""></div>
+        </div>
+
+        <footer id="contact">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="logo logo--footer">
+                <img src="/content/images/logo/ensemble-color.png" alt="">
+              </div>
+              <div class="donation">
+                <div class="donation__title">Donation</div>
+                <div class="donation__content">
+                  <div class="donation__coin coin btc">
+                    <div class="coin__img btc__img">
+                      <img src="/content/images/logo/btc.png" alt="">
+                    </div>
+                    <a onclick="V.features.copyToClipboard('.coin #btc')"  class="coin__adress btc__adress">
+                      1KEa...9cRP
+                      <span class="d-none" id="btc">BTC Copy Text</span>
+                    </a>
+                    
+                  </div>
+                  <div class="donation__coin coin eth">
+                    <div class="coin__img eth__img">
+                      <img src="/content/images/logo/eth.png" alt="">
+  
+                    </div>
+                    <a onclick="V.features.copyToClipboard('.coin #eth')" class="coin__adress eth__adress">
+                      1KEa...9cRP
+                      <span class="d-none" id="eth">ETH Copy Text</span>
+                    </a>
+                  </div>
+                  <div class="donation__coin coin bnb">
+                    <div class="coin__img bn__img">
+                      <img src="/content/images/logo/bnb.png" alt="">
+  
+                    </div>
+                    <a onclick="V.features.copyToClipboard('.coin #bnb')" class="coin__adress bnb__adress">
+                      1KEa...9cRP
+                      <span class="d-none" id="bnb">BNB Copy Text</span>
+
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </footer>
     </main>
 
+    <div class="copyAnim">
+      <p>Copy Success</p>
+    </div>
 
     <!-- jQuery first, then Bootstrap JS -->
     <script src="content/lib/jquery/jquery-3.5.1.min.js"></script>
     <script defer="defer" src="content/lib/bootstrap/bootstrap.min.js"></script>
     <!-- Other JS -->
     <script defer="defer" src="content/lib/fancybox/jquery.fancybox.min.js"></script>
+    <script src="content/lib/copy2clipboard.js"></script>
 
     
 

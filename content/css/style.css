@@ -6,6 +6,7 @@
 /* GLOBAL CSS >>> */
 /* Fonts */
 /* Colors */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
 .gradient-bg-1 {
   background: -webkit-gradient(linear, left top, right top, from(#3c1e64), color-stop(50%, #51267b), to(#3c1e64));
   background: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
@@ -18,54 +19,6 @@
 
 /* - */
 /* Font CSS >>> */
-@font-face {
-  font-family: 'Santral';
-  src: url("Santral-Medium.woff2") format("woff2"), url("Santral-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Santral';
-  src: url("Santral-Medium.woff2") format("woff2"), url("Santral-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Santral';
-  src: url("Santral-Bold.woff2") format("woff2"), url("Santral-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Santral';
-  src: url("Santral-Bold.woff2") format("woff2"), url("Santral-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Santral Book';
-  src: url("Santral-Book.woff2") format("woff2"), url("Santral-Book.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Santral Book';
-  src: url("Santral-Book.woff2") format("woff2"), url("Santral-Book.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* - */
 /* <<< Font CSS */
 /* - */
@@ -78,7 +31,7 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
-* {
+*, p {
   margin: 0;
   padding: 0;
   border: 0;
@@ -444,7 +397,7 @@ body {
   width: 100%;
   height: 100%;
   color: #1a1240;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #fff;
   font-size: 16px;
 }
@@ -588,6 +541,40 @@ a.underline {
   margin: 0 auto;
 }
 
+.coin {
+  margin: 0 15px;
+}
+
+.coin__adress {
+  background: -webkit-gradient(linear, left top, right top, from(#5d2b87), to(#26164d));
+  background: linear-gradient(90deg, #5d2b87 0%, #26164d 100%);
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px 8px;
+  display: block;
+  text-align: center;
+}
+
+.coin__adress:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fff;
+}
+
+.coin__img {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.coin__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
 main {
   background-color: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
 }
@@ -642,18 +629,39 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: #fff;
-}
-
-.explanation__content.content-2 {
   margin-top: -10%;
 }
 
-.explanation__content.content-3 {
-  margin-top: -10%;
+@media (max-width: 1536px) {
+  .explanation__content {
+    margin-top: -6%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .explanation__content {
+    margin-top: -7%;
+  }
+}
+
+.explanation__content.content-1 {
+  margin-top: 0;
 }
 
 .explanation__content.content-3 .explanation__text--left {
   width: 24%;
+}
+
+@media (max-width: 1536px) {
+  .explanation__content.content-3 .explanation__text--left {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .explanation__content.content-3 .explanation__text--left {
+    width: 33%;
+  }
 }
 
 .explanation__img {
@@ -685,10 +693,202 @@ main {
   margin-right: 3%;
 }
 
+@media (max-width: 1536px) {
+  .explanation__text--left {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .explanation__text--left {
+    width: 33%;
+  }
+}
+
 .explanation__text--right {
   width: 29%;
   margin-right: auto;
   margin-left: 3%;
+}
+
+@media (max-width: 1536px) {
+  .explanation__text--right {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .explanation__text--right {
+    width: 44%;
+  }
+}
+
+.platform {
+  padding: 5% 0;
+  background: -webkit-gradient(linear, left top, right top, from(#3c1e64), color-stop(50%, #51267b), to(#3c1e64));
+  background: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
+  position: relative;
+}
+
+.platform .bubble {
+  width: 35%;
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.platform .bubble__desc {
+  padding: 15px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.platform .bubble__title {
+  font-size: 1.7rem;
+  color: #2e1f44;
+}
+
+.platform .logo {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 5;
+}
+
+.platform .logo .circle {
+  border: 35px solid #745195;
+  padding: 10%;
+  border-radius: 100%;
+  height: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.platform__content {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.platform__content:first-child {
+  margin-bottom: 100px;
+}
+
+.roadmap {
+  background: -webkit-gradient(linear, left top, right top, from(#3c1e64), color-stop(50%, #51267b), to(#3c1e64));
+  background: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
+}
+
+.roadmap__title {
+  padding: 3% 0;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.roadmap__content img {
+  width: 100%;
+}
+
+.binance {
+  padding: 3% 0;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(#201037), color-stop(50%, #2a1443), to(#201037));
+  background: linear-gradient(90deg, #201037 0%, #2a1443 50%, #201037 100%);
+}
+
+.binance__title {
+  font-size: 4.5rem;
+  margin-bottom: 35px;
+  color: #fff;
+  font-weight: bold;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3% 0;
+}
+
+footer .logo {
+  width: 25%;
+}
+
+footer .logo img {
+  width: 100%;
+}
+
+footer .donation__title {
+  text-align: center;
+  color: #1a1240;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer .donation__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.copyAnim {
+  position: fixed;
+  display: none;
+  z-index: 99999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 0;
+  bottom: 5%;
+  left: 0;
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 23px;
+  margin-bottom: 18px;
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: normal;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, right top, from(#5d2b87), to(#26164d));
+  background: linear-gradient(90deg, #5d2b87 0%, #26164d 100%);
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
 }
 
 /*  <<< STYLES CSS */

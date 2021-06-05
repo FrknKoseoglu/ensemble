@@ -6,37 +6,30 @@ V = {
     V.features.init();
     V.buttons.init();
     V.popup.init();
-    V.form.init();
   },
 
-  Ajax: {
-    ajaxRequest: function (baseUrl, requestType, sentData = null) {
-      return new Promise((resolve, reject) => {
-        $.ajax({
-          url: baseUrl,
-          type: requestType,
-          data:
-            sentData != null && requestType != "GET"
-              ? sentData
-              : sentData != null && requestType == "GET"
-              ? sentData
-              : null,
-          dataType: "json",
-          /*contentType: "application/json",*/
-          success: function (response) {
-            resolve(response);
-          },
-          error: function (error) {
-            reject(error);
-          },
-        });
-      });
-    },
-  },
+
 
   features: {
     init: function () {
       this.clientInfo();
+      this.smoothScroll();
+    },
+
+    copyToClipboard:function(element){
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        $(".copyAnim").removeClass("animate__backOutDown");
+        $(".copyAnim").addClass("d-flex animate__animated animate__backInUp");
+
+        setTimeout(function () {
+            $(".copyAnim").removeClass("animate__backInUp");
+            $(".copyAnim").addClass("animate__backOutDown");
+        }, 3000);
     },
 
     clientInfo: function () {
