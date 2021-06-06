@@ -64,23 +64,15 @@ V = {
         });
       });
     },
-    isNear: function (element, distance1, distance2) {
-      var scrollCheck = false;
-      $(window).scroll(function () {
-        (scrollTop = $(window).scrollTop()),
-          (elementOffset = $(element).offset().top),
-          (distance = elementOffset - scrollTop);
-
-        if (
-          distance < distance1 &&
-          distance > distance2 &&
-          scrollCheck == false
-        ) {
-          //Your Run Code
-          scrollCheck = true;
-        }
-      });
-    },
+    isNear: function($element, distance, event) {
+      var left = $element.offset().left - distance,
+          top = $element.offset().top - distance,
+          right = left + $element.width() + (2 * distance),
+          bottom = top + $element.height() + (2 * distance),
+          x = event.pageX,
+          y = event.pageY;
+      return (x > left && x < right && y > top && y < bottom);
+  },
     isBottom: function (distance) {
       $(window).scroll(function () {
         if (
@@ -212,7 +204,20 @@ V = {
   },
 
   global: function () {
-    //
+    
+//Left Menu Hide When Start
+setTimeout(function () {
+  $(".social").removeClass("active");
+}, 3000);
+
+    $('body').mousemove(function (event) {
+      if (V.features.isNear($('.social'), 20, event)) {
+          $(".social").addClass("active");
+      } else {
+          $(".social").removeClass("active");
+      };
+  });
+
   },
  
 

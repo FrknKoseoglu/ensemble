@@ -21,6 +21,8 @@ body {
    font-family: $Font-1;
    background: #fff;
    font-size: 16px;
+   margin:0;
+   padding:0;
 
    @media (max-width:480px) {
       font-size: 14px;
@@ -31,7 +33,9 @@ body {
 
 main {
    background-color: $gradient-1;
+   position: relative;
 }
+
 
 .main-menu {
    background: $gradient-1;
@@ -48,16 +52,39 @@ main {
          text-decoration: underline;
       }
    }
+   .navbar-nav{
+         @media (max-width:960px) {
+           text-align: center;
+           font-size:1.5rem;
+           margin: 0 auto !important;
+         }
+      }
+   .navbar-light{
+      .navbar-toggler{
+         color: #fff !important;
+         border-color: #fff !important;
+         &:focus{
+            outline: none !important;
+         }
+      }
+      .navbar-toggler-icon{
+         filter: invert(98%) sepia(46%) saturate(370%) hue-rotate(185deg) brightness(112%) contrast(100%) !important;
+         &:focus-visible{
+            outline: 0 !important;
+         }
+      }
+   }
+   }
   
-}
 
 .video{
    background:$gradient-2;
    height:100%;
    &__player{
-      min-height:450px;
       height:450px;
-      max-height:650px;
+      @media(max-width:960px){
+         height: 300px;
+      }
       iframe{
          height:100%;
          width:100%;
@@ -67,7 +94,13 @@ main {
 
 .explanation{
    background:$gradient-1;
-   padding:5% 0;
+   padding-top:15px;
+   &__top{
+      img{
+         width: 100%;
+         margin-bottom: -1px;
+      }
+   }
    &__content{
       display:flex;
       justify-content: space-between;
@@ -79,8 +112,17 @@ main {
       @media(max-width:1440px){
         margin-top:-7%;
       }
+      @media(max-width:960px){
+         flex-direction: column;
+         padding:25px 0;
+       }
       &.content-1{
          margin-top:0;
+      }
+      &.content-2{
+         @media(max-width:960px){
+            flex-direction: column-reverse;
+          }
       }
       &.content-3{
          .explanation__text--left{
@@ -99,12 +141,23 @@ main {
       img{
          width:100%;
       }
+      @media(max-width:960px){
+         width:100% !important;
+         margin:0 auto !important;
+         
+        }
    }
    &__text{
       width:50%;
       font-size:1.5rem;
       line-height: 1.7;
       @include flexCenter;
+      @media(max-width:960px){
+         width:100% !important;
+         margin:0 auto !important;
+         padding:15px;
+         font-size:1rem;
+        }
       &--left{
          width:32%;
          margin-left:auto;
@@ -132,21 +185,38 @@ main {
 
 .platform{
    padding:5% 0;
-   background: $gradient-1;
-   position: relative;
+   padding-top:0;
+   background: $gradient-4;
+   &__top{
+      margin-bottom: 5%;
+      margin-top: -5px;
+      @media (max-width:960px) {
+         margin-top: -5px;
+      }
+      img{
+         width:100%;
+      }
+   }
+   &__wrap{
+      position: relative;
+   }
    .bubble{
-      width:35%;
+      width:40%;
       padding-top:15px;
       padding-bottom:35px;
+      color:$color-6;
+      @media (max-width:960px) {
+         width:100%;
+         margin-bottom: 25px;
+      }
       &__desc{
          padding:15px;
          margin:0 auto;
          width:100%;
-         font-size:1.2rem;
+         font-size:1rem;
       }
       &__title{
          font-size:1.7rem;
-         color:$color-6;
       }
    }
    .logo{
@@ -160,11 +230,16 @@ main {
       z-index:5;
       .circle{
       border:35px solid $color-5;
-      padding:10%;
+      padding:15%;
       border-radius: 100%;
-      height: 85%;
+      height: 100%;
       @include flexCenter;
-   
+      @media (max-width:960px) {
+         height: unset;padding:7%;
+      }
+      @media (max-width:375px) {
+         padding:7%;
+      }
       }
    }
 &__content{
@@ -173,13 +248,24 @@ main {
    display:flex;
    justify-content: space-between;
    &:first-child{
-      margin-bottom:100px;
+      margin-bottom: 20%;
+      @media (max-width:960px) {
+         margin-bottom: 60%;
+      }
+   }
+
+   @media (max-width:960px) {
+      flex-direction: column;
    }
 }
 }
 
 .roadmap{
-   background: $gradient-1;
+   background: $gradient-4;
+   @media (max-width:960px) {
+      padding:3% 0;
+      margin-top:-2px;
+   }
    &__title{
       padding:3% 0;
       font-size:3rem;
@@ -191,34 +277,71 @@ main {
       img{
          width:100%;
       }
+     
    }
 }
 
 .binance{
    padding:3% 0;
+   padding-bottom:0;
    text-align: center;
    background: $gradient-2;
+   @media (max-width:960px) {
+      
+    }
    &__title{
-      font-size:4.5rem;
+      font-size:3.7rem;
       margin-bottom: 35px;
       color:#fff;
       font-weight: bold;
+      
+         @media (max-width:960px) {
+           font-size:3rem;
+           padding-top:35px;
+         }
    }
    &__img{
-      
-   }
-}
-
-footer{
-   display:flex;
-   padding:3% 0;
-   .logo{
-      width:25%;
+      padding:5%;
+      padding-top:0;
+      width:40%;
+      margin:0 auto;
+      @media (max-width:960px) {
+         width:80%;
+       }
       img{
          width:100%;
       }
    }
+   &__bottom{
+      img{
+         width:100%;
+         margin-bottom: -1px;
+      }
+   }
+}
+
+.footer{
+   display:flex;
+   padding:3% 0;
+   position: relative;
+ 
+ 
+   .logo{
+      width:25%;
+      @media (max-width:960px) {
+         margin:0 auto;
+         width:50%;
+         padding-bottom: 35px;
+       }
+      img{
+         width:100%;
+      }
+     
+   }
    .donation{
+      @media (max-width:960px) {
+         padding-bottom: 35px;
+       }
       &__title{
          text-align: center;
          color:$color-1;
@@ -228,6 +351,36 @@ footer{
       }
       &__content{
          display:flex;
+        
+      }
+   }
+}
+
+.social{
+   &.active{
+      margin-left: 35px;
+      transition: all .5s ease-in;
+      @media(max-width:960px){
+         margin-left: 2%;
+      }
+   }
+   z-index:50;
+   margin-left: -37px;
+   transition: all .5s ease-in;
+   position: fixed;
+   top:15%;
+   bottom:15%;
+   width: 5%;
+   @media(max-width:960px){
+      margin-left: -9%;
+      width:15%;
+   }
+   li{
+         @include t02s;
+         margin:15px 0;
+      :hover{
+         transform: scale(1.1);
+         @include t02s;
       }
    }
 }
@@ -262,6 +415,9 @@ footer{
    font-style: normal;
    font-stretch: normal;
    line-height: 1.31;
+   @media (max-width:960px) {
+      width:50%;
+    }
 }
 
 /*  <<< STYLES CSS */
