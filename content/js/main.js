@@ -16,12 +16,31 @@ V = {
       this.smoothScroll();
     },
 
-    copyToClipboard:function(element){
+    copyToClipboard:function(element,coinName){
         var $temp = $("<input>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
         document.execCommand("copy");
         $temp.remove();
+        if(coinName == "btc"){
+          var coinAdress = $(".btc #btc").text();
+          var copyText = "Bitcoin Copy Succsess"
+        }
+        else if(coinName == "eth")
+        {
+          var coinAdress = $(".eth #eth").text();
+          var copyText = "Ethereum Copy Succsess"
+        }
+        else if(coinName == "bnb"){
+          var coinAdress = $(".bnb #bnb").text();
+          var copyText = "Binance Coin Copy Succsess"
+        }
+        
+        $('.copyAnim #coinAdress').text(coinAdress);
+        $('.copyAnim #copyText').text(copyText);
+
+
+        console.log(this);
 
         $(".copyAnim").removeClass("animate__backOutDown");
         $(".copyAnim").addClass("d-flex animate__animated animate__backInUp");
@@ -64,6 +83,7 @@ V = {
         });
       });
     },
+    
     isNear: function($element, distance, event) {
       var left = $element.offset().left - distance,
           top = $element.offset().top - distance,
@@ -129,10 +149,33 @@ V = {
 
   buttons: {
     init: function () {
-        this.Button1();
+        this.social();
+        this.videoImage();
+
     },
-    Button1: function () {
-   
+    social: function () {
+      $("#social-button").click(function (e) { 
+        e.preventDefault();
+        if($(".social").hasClass("active")){
+          $(".social").removeClass("active");
+        }
+        else{
+          $(".social").addClass("active");
+        }
+        
+      });
+    },
+    videoImage: function () {
+      $(".video__image").click(function (e) { 
+        e.preventDefault();
+        $(".video__player div iframe")[0].src += "?autoplay=1";
+
+          setTimeout(() => {
+            $(".video__player").removeClass("d-none");
+            $(".video__image").addClass("d-none");
+          }, 500);
+            
+      });
     },
   },
 
@@ -207,17 +250,7 @@ V = {
     
 //Left Menu Hide When Start
 setTimeout(function () {
-  $(".social").removeClass("active");
-}, 3000);
-
-    $('body').mousemove(function (event) {
-      if (V.features.isNear($('.social'), 20, event)) {
-          $(".social").addClass("active");
-      } else {
-          $(".social").removeClass("active");
-      };
-  });
-
+  $(".social").removeClass("active");}, 3000);
   },
  
 

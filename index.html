@@ -11,6 +11,8 @@
 
   <!-- Bootstrap CSS -->
   <link defer="defer" rel="stylesheet" href="content/lib/bootstrap/bootstrap.min.css">
+   <!-- Bootstrap CSS -->
+   <link defer="defer" rel="stylesheet" href="content/lib/icofont/icofont.min.css">
   <!-- Animate  CSS-->
   <link defer="defer" rel="stylesheet" href="content/lib/animete/animate.min.css">
   <!-- FancyBox CSS-->
@@ -37,9 +39,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" target="_blank" href="content/docs/sample.pdf">WHITEPAPER</span></a>
+              <a class="nav-item nav-link" onclick="window.open('content/docs/sample.pdf','_blank');" target="_blank" href="content/docs/sample.pdf">WHITEPAPER</a>
               <a class="nav-item nav-link" href="#roadmap">ROADMAP</a>
-              <a class="nav-item nav-link" href="#contact">CONTACT</a>
+              <a class="nav-item nav-link" onclick="window.open('https://bscscan.com/token/0xbc83a496ee7df87ff43d23125b1c5feda2c7f95d','_blank');" target="_blank" href="https://bscscan.com/token/0xbc83a496ee7df87ff43d23125b1c5feda2c7f95d">CONTRACT</a>
             </div>
           </div>
         </nav>
@@ -50,9 +52,14 @@
         <div class="row justify-content-center">
           <div class="col-md-9">
             <div class="video__content">
-              <div class="video__player">
-                <iframe src="https://player.vimeo.com/video/347119375?color=ef2200&byline=0&portrait=0" frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              <div class="video__image">
+                <i class="icofont-ui-play"></i>
+                <img src="content/images/video/test.png" alt="">
+              </div>
+              <div class="video__player d-none">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="https://player.vimeo.com/video/347119375" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -210,9 +217,9 @@
                 <div class="coin__img btc__img">
                   <img src="content/images/logo/btc.png" alt="">
                 </div>
-                <a onclick="V.features.copyToClipboard('.coin #btc')" class="coin__adress btc__adress">
-                  1KEa...9cRP
-                  <span class="d-none" id="btc">BTC Copy Text</span>
+                <a onclick="V.features.copyToClipboard('.coin #btc','btc')" class="coin__adress btc__adress">
+                  bc1q...0ysx
+                  <span class="d-none" id="btc">bc1qnqscmkpdvj482v6vx0hxfu9am8gajks5ke0ysx</span>
                 </a>
 
               </div>
@@ -221,9 +228,9 @@
                   <img src="content/images/logo/eth.png" alt="">
 
                 </div>
-                <a onclick="V.features.copyToClipboard('.coin #eth')" class="coin__adress eth__adress">
-                  1KEa...9cRP
-                  <span class="d-none" id="eth">ETH Copy Text</span>
+                <a onclick="V.features.copyToClipboard('.coin #eth','eth')" class="coin__adress eth__adress">
+                  0xD51...f2B0
+                  <span class="d-none" id="eth">0xD516c81249E33fb0967f5020859Dd25B42EFf2B0</span>
                 </a>
               </div>
               <div class="donation__coin coin bnb">
@@ -231,9 +238,9 @@
                   <img src="content/images/logo/bnb.png" alt="">
 
                 </div>
-                <a onclick="V.features.copyToClipboard('.coin #bnb')" class="coin__adress bnb__adress">
-                  1KEa...9cRP
-                  <span class="d-none" id="bnb">BNB Copy Text</span>
+                <a onclick="V.features.copyToClipboard('.coin #bnb','btc')" class="coin__adress bnb__adress">
+                  0xb55...ab4D
+                  <span class="d-none" id="bnb">0xb55D379fe66e70B305899e0A3be153Cd622eab4D</span>
 
                 </a>
               </div>
@@ -246,20 +253,22 @@
     </footer>
     <div class="social active">
       <ul>
-        <li><a href="#"><img src="content/images/icon/ig.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/in.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/fb.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/tg.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/tw.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/rd.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/gh.png" alt=""></a></li>
-        <li><a href="#"><img src="content/images/icon/dc.png" alt=""></a></li>
+        <li><a href="https://www.instagram.com/ensemble.token/" target="_blank"><img src="content/images/icon/ig.png" alt=""></a></li>
+        <li><a href="https://www.linkedin.com/in/ensemble-token-258013214/" target="_blank"><img src="content/images/icon/in.png" alt=""></a></li>
+        <li><a href="https://www.facebook.com/Ensemble-109155431378522" target="_blank"><img src="content/images/icon/fb.png" alt=""></a></li>
+        <li><a href="https://t.me/EnsembleCommunity" target="_blank"><img src="content/images/icon/tg.png" alt=""></a></li>
+        <li><a href="https://twitter.com/EnsembleToken" target="_blank"><img src="content/images/icon/tw.png" alt=""></a></li>
+        <li><a href="https://www.reddit.com/user/Ensemble-Token" target="_blank"><img src="content/images/icon/rd.png" alt=""></a></li>
+        <li><a href="https://github.com/Token-Ensemble" target="_blank"><img src="content/images/icon/gh.png" alt=""></a></li>
+        <li><a href="https://discord.gg/345yFj9r" target="_blank"><img src="content/images/icon/dc.png" alt=""></a></li>
       </ul>
+      <a id="social-button" href="#"><i class="icofont-hand-drawn-right"></i></a>
     </div>
   </main>
 
   <div class="copyAnim">
-    <p>Copy Success</p>
+    <p id="copyText">Copy Success</p><br>
+    <p id="coinAdress"></p>
   </div>
 
   <!-- jQuery first, then Bootstrap JS -->
@@ -269,7 +278,6 @@
   <script defer="defer" src="content/lib/fancybox/jquery.fancybox.min.js"></script>
   <script src="content/lib/copy2clipboard.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
 
   <!-- Optional Developer Custom JavaScript -->
   <script src="content/js/main.js"></script>

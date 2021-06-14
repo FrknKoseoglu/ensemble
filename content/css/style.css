@@ -602,12 +602,22 @@ a.underline {
 main {
   background-color: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
   position: relative;
+  overflow: hidden;
 }
 
 .main-menu {
   background: -webkit-gradient(linear, left top, right top, from(#3c1e64), color-stop(50%, #51267b), to(#3c1e64));
   background: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
   color: #fff !important;
+}
+
+@media (max-width: 960px) {
+  .main-menu .navbar-brand {
+    width: 75%;
+  }
+  .main-menu .navbar-brand img {
+    width: 100%;
+  }
 }
 
 .main-menu nav {
@@ -653,16 +663,56 @@ main {
   background: -webkit-gradient(linear, left top, right top, from(#201037), color-stop(50%, #2a1443), to(#201037));
   background: linear-gradient(90deg, #201037 0%, #2a1443 50%, #201037 100%);
   height: 100%;
+  width: 100%;
 }
 
-.video__player {
-  height: 450px;
+.video__content {
+  height: 100%;
+  width: 100%;
 }
 
-@media (max-width: 960px) {
-  .video__player {
-    height: 300px;
-  }
+.video__image {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.video__image:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.video__image:hover i {
+  font-size: 5.5rem;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.video__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.video__image i {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #1a1240;
+  font-size: 5rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #745195, 0 0 30px #745195, 0 0 40px #745195, 0 0 55px #745195, 0 0 75px #745195;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .video__player iframe {
@@ -906,7 +956,10 @@ main {
 
 @media (max-width: 960px) {
   .platform .logo .circle {
-    height: unset;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin-top: -15%;
     padding: 7%;
   }
 }
@@ -934,7 +987,7 @@ main {
 
 @media (max-width: 960px) {
   .platform__content:first-child {
-    margin-bottom: 60%;
+    margin-top: 0;
   }
 }
 
@@ -944,6 +997,7 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 100%;
   }
 }
 
@@ -1060,14 +1114,47 @@ main {
 }
 
 .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 50;
-  margin-left: -37px;
+  margin-left: -45px;
   -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
   position: fixed;
   top: 15%;
   bottom: 15%;
   width: 5%;
+}
+
+@media (max-width: 960px) {
+  .social {
+    margin-left: -12%;
+    width: 15%;
+  }
+}
+
+.social #social-button {
+  font-size: 5rem;
+  font-weight: bold;
+  -webkit-transition: .2s;
+  transition: .2s;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #745195, 0 0 30px #745195, 0 0 40px #745195, 0 0 55px #745195, 0 0 75px #745195;
+}
+
+.social #social-button:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+@media (max-width: 960px) {
+  .social #social-button {
+    font-size: 4rem;
+    margin-left: 15px;
+  }
 }
 
 .social.active {
@@ -1082,11 +1169,16 @@ main {
   }
 }
 
-@media (max-width: 960px) {
-  .social {
-    margin-left: -9%;
-    width: 15%;
-  }
+.social.active #social-button {
+  display: block;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.social.active #social-button:hover {
+  text-decoration: none;
 }
 
 .social li {
@@ -1112,10 +1204,15 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   right: 0;
   bottom: 5%;
   left: 0;
-  width: 20%;
+  width: 40%;
   margin: 0 auto;
   margin-top: 23px;
   margin-bottom: 18px;
@@ -1137,7 +1234,11 @@ main {
 
 @media (max-width: 960px) {
   .copyAnim {
-    width: 50%;
+    width: 90%;
+    font-size: 16px;
+  }
+  .copyAnim #coinAdress {
+    font-size: 13px;
   }
 }
 
