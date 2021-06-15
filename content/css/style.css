@@ -1001,6 +1001,16 @@ main {
   }
 }
 
+@media (max-width: 375px) {
+  .platform__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 110%;
+  }
+}
+
 .roadmap {
   background: -webkit-gradient(linear, left top, right top, from(#4b2374), color-stop(50%, #5d2a87), to(#4e2578));
   background: linear-gradient(90deg, #4b2374 0%, #5d2a87 50%, #4e2578 100%);
@@ -1034,7 +1044,7 @@ main {
 }
 
 .binance__title {
-  font-size: 3.7rem;
+  font-size: 2.5rem;
   margin-bottom: 35px;
   color: #fff;
   font-weight: bold;
@@ -1050,7 +1060,6 @@ main {
 .binance__img {
   padding: 5%;
   padding-top: 0;
-  width: 40%;
   margin: 0 auto;
 }
 
@@ -1077,6 +1086,24 @@ main {
   position: relative;
 }
 
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 764px) {
+  .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .footer .logo {
   width: 25%;
 }
@@ -1093,9 +1120,23 @@ main {
   width: 100%;
 }
 
+.footer .logo .email {
+  padding: 15px 10px;
+  text-align: center;
+}
+
 @media (max-width: 960px) {
   .footer .donation {
     padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer .donation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1111,6 +1152,35 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+}
+
+@media (max-width: 320px) {
+  .footer .donation__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer .donation__content .coin {
+    margin: 15px 0;
+  }
+  .footer .donation__content .coin a {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.footer .donation .copyBlock {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+
+.footer .donation .copyBlock.active {
+  display: block;
+  cursor: not-allowed;
 }
 
 .social {
@@ -1132,7 +1202,7 @@ main {
 
 @media (max-width: 960px) {
   .social {
-    margin-left: -12%;
+    margin-left: -13%;
     width: 15%;
   }
 }
@@ -1239,6 +1309,12 @@ main {
   }
   .copyAnim #coinAdress {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+  .copyAnim #coinAdress {
+    font-size: 12px;
   }
 }
 

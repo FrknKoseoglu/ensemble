@@ -5,7 +5,6 @@ V = {
     V.global();
     V.features.init();
     V.buttons.init();
-    V.popup.init();
   },
 
 
@@ -17,6 +16,8 @@ V = {
     },
 
     copyToClipboard:function(element,coinName){
+      
+      $(".copyBlock").addClass("active");
         var $temp = $("<input>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
@@ -40,14 +41,12 @@ V = {
         $('.copyAnim #copyText').text(copyText);
 
 
-        console.log(this);
-
         $(".copyAnim").removeClass("animate__backOutDown");
         $(".copyAnim").addClass("d-flex animate__animated animate__backInUp");
-
         setTimeout(function () {
             $(".copyAnim").removeClass("animate__backInUp");
             $(".copyAnim").addClass("animate__backOutDown");
+            $(".copyBlock").removeClass("active");
         }, 3000);
     },
 
@@ -250,7 +249,7 @@ V = {
     
 //Left Menu Hide When Start
 setTimeout(function () {
-  $(".social").removeClass("active");}, 3000);
+  $(".social").removeClass("active");}, 1500);
   },
  
 

@@ -2,7 +2,7 @@
     $(function () {
         'use strict';
 
-        $('body').click(function (event) {
+        $('.copyed').click(function (event) {
             event.preventDefault();
             // if element with "C2cb" was clicked
             if ($(event.target).hasClass('C2cb')) {
