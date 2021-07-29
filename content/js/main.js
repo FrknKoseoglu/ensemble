@@ -5,6 +5,7 @@ V = {
     V.global();
     V.features.init();
     V.buttons.init();
+    this.splashScreen();
   },
 
 
@@ -13,6 +14,7 @@ V = {
     init: function () {
       this.clientInfo();
       this.smoothScroll();
+      this.splashScreen();
     },
 
     copyToClipboard:function(element,coinName){
@@ -104,6 +106,15 @@ V = {
         }
       });
     },
+    splashScreen: function () {
+      window.addEventListener('load', function () {
+          $("#splashscreen").fadeOut();
+      });
+      setTimeout(() => {
+        $("#splashscreen").css("display","none");
+      }, 6000);
+  },
+
   },
 
   slider: {
@@ -167,8 +178,9 @@ V = {
     videoImage: function () {
       $(".video__image").click(function (e) { 
         e.preventDefault();
-        $(".video__player div iframe")[0].src += "?autoplay=1";
-
+        $("#yt")[0].src += "?autoplay=1";
+        setTimeout(function(){ $("#yt").show(); }, 200);
+        
           setTimeout(() => {
             $(".video__player").removeClass("d-none");
             $(".video__image").addClass("d-none");
