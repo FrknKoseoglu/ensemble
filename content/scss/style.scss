@@ -38,6 +38,7 @@ main {
    
 }
 #splashscreen {
+   background: $gradient-1;
    position:fixed;
        width:100vw;
        height:100vh;
@@ -47,17 +48,19 @@ main {
       bottom:0;
        overflow:hidden;
        z-index:999999;
+       @include flexCenter;
+
        
-       img{
-           width:100%;
-           height:100%;
-       }
    @media (max-width:480px) {
       
       img{
          object-fit: cover;
      }
    }
+}
+
+.noscroll{
+   overflow: hidden !important;
 }
 
 .main-menu {
@@ -120,8 +123,8 @@ main {
 .video {
    background: $gradient-2;
    min-height: 350px;
-      height: 25vw;
-      max-height: 500px;
+      height: 31vw;
+      max-height: 550px;
    width: 100%;
 
    &__content {
@@ -136,13 +139,6 @@ main {
       width: 100%;
       cursor: pointer;
       position: relative;
-      &::before{
-         content:'';
-         position: absolute;
-         width:100%;
-         height:100%;
-         background-color:rgba(0, 0, 0, 0.3);
-      }
       &:hover {
          @include t02s;
 
@@ -463,6 +459,99 @@ main {
    }
 }
 
+.chart-team{
+   padding:0 15%;
+   padding-bottom: 5%;
+   width: 100%;
+   @include flexCenter;
+   justify-content: space-between;
+   align-items: flex-start;
+   @media (max-width:1440px){
+      padding:0 10%;
+      padding-bottom: 5%;
+   }
+   @media (max-width:768px){
+      flex-direction: column;
+      height:100%;
+      padding:0 5%;
+      padding-bottom: 5%;
+   }
+}
+
+.charts{
+   width:100%;
+   height:100%;
+   position: relative;
+   &__title{
+      color:$color-1;
+      font-size:40px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 35px;
+   }
+}
+
+#chart{
+  width:35vw;
+  height:25vw;
+  object-fit: contain;
+  position:absolute;
+  top:0;
+  z-index:-1;
+  @media (max-width:768px){
+   width:100%;
+   height:50vh;
+   position:relative;
+}
+}
+.teams{
+   width:100%;
+   &__title{
+      color:$color-1;
+      font-size:40px;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 35px;
+
+   }
+}
+
+.person{
+   display:block;
+   cursor: pointer;
+   text-align: right;
+   color:#b5b5b5;
+   display:flex;
+   justify-content: flex-end;
+   align-items: center;
+   margin: 15px 0;
+   &:hover{
+      text-decoration: none;
+      color:unset;
+   }
+   &__info{
+      margin-right: 15px;
+   }
+   &__name{
+      font-weight: bold;
+      margin-bottom: 3px;
+   }
+   &__job{
+      span{
+         font-weight: bold;
+      }
+   }
+   &__icon{
+      width:35px;
+      height:35px;
+      img{
+         width:100%;
+         height:100%;
+         
+      }
+   }
+}
+
 .binance {
    padding-bottom: 0;
    text-align: center;
@@ -512,7 +601,7 @@ main {
    &__content {
       display: flex;
       justify-content: space-between;
-
+      align-items: center;
       @media (max-width:764px) {
          flex-direction: column;
       }
@@ -596,12 +685,10 @@ main {
       }
    }
    &__social {
-      width:50%;
-      @media (max-width:768px){
-         width:100%;
-      }
       ul {
+         margin:0;
          display: flex;
+         align-items: center;
          @media (max-width:768px){
             justify-content: center;
          }

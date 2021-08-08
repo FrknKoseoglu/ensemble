@@ -5,14 +5,13 @@ V = {
     V.global();
     V.features.init();
     V.buttons.init();
-    this.splashScreen();
   },
 
 
 
   features: {
     init: function () {
-      this.clientInfo();
+      // this.clientInfo();
       this.smoothScroll();
       this.splashScreen();
     },
@@ -108,11 +107,23 @@ V = {
     },
     splashScreen: function () {
       window.addEventListener('load', function () {
+        
+          $("body").removeClass("noscroll");
           $("#splashscreen").fadeOut();
+
+          setTimeout(function () {
+            $(".social").removeClass("active");}, 1500);
       });
       setTimeout(() => {
+        setTimeout(function () {
+          $(".social").removeClass("active");}, 1500);
+        $("body").removeClass("noscroll");
+        $("#splashscreen").fadeOut();
         $("#splashscreen").css("display","none");
-      }, 6000);
+
+        setTimeout(function () {
+          $(".social").removeClass("active");}, 1500);
+      }, 4000);
   },
 
   },
@@ -159,9 +170,8 @@ V = {
 
   buttons: {
     init: function () {
-        this.social();
         this.videoImage();
-
+        V.buttons.social();
     },
     social: function () {
       $("#social-button").click(function (e) { 
@@ -259,9 +269,7 @@ V = {
 
   global: function () {
     
-//Left Menu Hide When Start
-setTimeout(function () {
-  $(".social").removeClass("active");}, 1500);
+
   },
  
 

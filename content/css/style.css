@@ -17,6 +17,108 @@
   background: linear-gradient(90deg, #201037 0%, #2a1443 50%, #201037 100%);
 }
 
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+.anim-shake {
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+.anim-heartBeat {
+  -webkit-animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 /* - */
 /* Font CSS >>> */
 /* - */
@@ -606,6 +708,8 @@ main {
 }
 
 #splashscreen {
+  background: -webkit-gradient(linear, left top, right top, from(#3c1e64), color-stop(50%, #51267b), to(#3c1e64));
+  background: linear-gradient(90deg, #3c1e64 0%, #51267b 50%, #3c1e64 100%);
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -615,11 +719,15 @@ main {
   bottom: 0;
   overflow: hidden;
   z-index: 999999;
-}
-
-#splashscreen img {
-  width: 100%;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 480px) {
@@ -627,6 +735,10 @@ main {
     -o-object-fit: cover;
        object-fit: cover;
   }
+}
+
+.noscroll {
+  overflow: hidden !important;
 }
 
 .main-menu {
@@ -687,8 +799,8 @@ main {
   background: -webkit-gradient(linear, left top, right top, from(#201037), color-stop(50%, #2a1443), to(#201037));
   background: linear-gradient(90deg, #201037 0%, #2a1443 50%, #201037 100%);
   min-height: 350px;
-  height: 25vw;
-  max-height: 500px;
+  height: 31vw;
+  max-height: 550px;
   width: 100%;
 }
 
@@ -703,14 +815,6 @@ main {
   width: 100%;
   cursor: pointer;
   position: relative;
-}
-
-.video__image::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .video__image:hover {
@@ -1135,6 +1239,135 @@ main {
   width: 100%;
 }
 
+.chart-team {
+  padding: 0 15%;
+  padding-bottom: 5%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (max-width: 1440px) {
+  .chart-team {
+    padding: 0 10%;
+    padding-bottom: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-team {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    padding: 0 5%;
+    padding-bottom: 5%;
+  }
+}
+
+.charts {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.charts__title {
+  color: #1a1240;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+#chart {
+  width: 35vw;
+  height: 25vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  #chart {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+}
+
+.teams {
+  width: 100%;
+}
+
+.teams__title {
+  color: #1a1240;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 35px;
+}
+
+.person {
+  display: block;
+  cursor: pointer;
+  text-align: right;
+  color: #b5b5b5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0;
+}
+
+.person:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+.person__info {
+  margin-right: 15px;
+}
+
+.person__name {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.person__job span {
+  font-weight: bold;
+}
+
+.person__icon {
+  width: 35px;
+  height: 35px;
+}
+
+.person__icon img {
+  width: 100%;
+  height: 100%;
+}
+
 .binance {
   padding-bottom: 0;
   text-align: center;
@@ -1192,6 +1425,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 764px) {
@@ -1302,20 +1538,14 @@ main {
   }
 }
 
-.footer__social {
-  width: 50%;
-}
-
-@media (max-width: 768px) {
-  .footer__social {
-    width: 100%;
-  }
-}
-
 .footer__social ul {
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 768px) {
